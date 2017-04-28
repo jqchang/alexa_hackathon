@@ -1,5 +1,15 @@
 'use strict';
 
+/*
+INVOCATION WORDS
+NewsIntent: give me news at {NewsCompany}
+NewsIntent: give me {NewsCompany} news
+JobsIntent: give me jobs at {JobsCompany}
+JobsIntent: give me {JobsCompany} jobs
+*/
+
+
+
 /**
  * This sample demonstrates a simple skill built with the Amazon Alexa Skills Kit.
  * The Intent Schema, Custom Slots, and Sample Utterances for this skill, as well as
@@ -127,7 +137,7 @@ function newsTalk(intent, session, callback) {
       for(var i in news) {
         speechOutput += news[i]+'. ';
       }
-      shouldEndSession = true;
+      // shouldEndSession = true;
       callback(sessionAttributes,
            buildSpeechletResponse(intent.name, speechOutput, repromptText, shouldEndSession));
     })
@@ -166,7 +176,7 @@ function jobsTalk(intent, session, callback) {
       for(var i in jobs) {
         speechOutput += jobs[i]+'. ';
       }
-      shouldEndSession = true;
+      // shouldEndSession = true;
       callback(sessionAttributes,
            buildSpeechletResponse(intent.name, speechOutput, repromptText, shouldEndSession));
     })
